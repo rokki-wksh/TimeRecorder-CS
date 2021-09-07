@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>TimeRecorder_CS.Persister.InMemory</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TimeRecorder-CS.Domain\TimeRecorder-CS.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
