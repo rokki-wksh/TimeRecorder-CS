@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeRecorder-CS.Domain", "src\TimeRecorder-CS.Domain\TimeRecorder-CS.Domain.csproj", "{F4101B6C-538C-4A32-B343-F904B697C21F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeRecorder-CS.Persister.InMemory", "src\TimeRecorder-CS.Persister.InMemory\TimeRecorder-CS.Persister.InMemory.csproj", "{FDB82B8A-1370-4ABF-AE82-6FB74BE710D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeRecorder-CS.UseCase", "src\TimeRecorder-CS.UseCase\TimeRecorder-CS.UseCase.csproj", "{139BAFD7-1F1C-4043-A12F-BCCF98D5C3C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4101B6C-538C-4A32-B343-F904B697C21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4101B6C-538C-4A32-B343-F904B697C21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4101B6C-538C-4A32-B343-F904B697C21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4101B6C-538C-4A32-B343-F904B697C21F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB82B8A-1370-4ABF-AE82-6FB74BE710D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB82B8A-1370-4ABF-AE82-6FB74BE710D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB82B8A-1370-4ABF-AE82-6FB74BE710D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB82B8A-1370-4ABF-AE82-6FB74BE710D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{139BAFD7-1F1C-4043-A12F-BCCF98D5C3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{139BAFD7-1F1C-4043-A12F-BCCF98D5C3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{139BAFD7-1F1C-4043-A12F-BCCF98D5C3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{139BAFD7-1F1C-4043-A12F-BCCF98D5C3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F8E6A03-2308-4B41-B8A0-00237559CC45}
+	EndGlobalSection
+EndGlobal
