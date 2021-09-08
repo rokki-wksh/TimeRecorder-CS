@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TimeRecorder-CS.Domain\TimeRecorder-CS.Domain.csproj" />
+    <ProjectReference Include="..\TimeRecorder-CS.UseCase\TimeRecorder-CS.UseCase.csproj" />
   </ItemGroup>
 
 </Project>

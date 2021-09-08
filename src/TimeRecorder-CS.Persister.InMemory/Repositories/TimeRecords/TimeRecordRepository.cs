@@ -56,5 +56,10 @@ namespace TimeRecorder_CS.Persister.InMemory.Repositories.TimeRecords
         {
             _store[timeRecord.TimeRecordId.ToString()] = timeRecord.ToDTO();
         }
+
+        internal List<TimeRecordDTO> List()
+        {
+            return _store.Select(x => x.Value).ToList();
+        }
     }
 }
