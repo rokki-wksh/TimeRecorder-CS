@@ -1,23 +1,21 @@
 ﻿using System;
 using TimeRecorder_CS.Domain.Models.Accounts;
+using TimeRecorder_CS.Domain.Types.DateRanges;
 
 namespace TimeRecorder_CS.UseCase.TimeRecords.GetList
 {
     public sealed class TimeRecordGetListInputData
     {
         private readonly AccountId _accountId;
-        private readonly DateTime _from;
-        private readonly DateTime _to;
+        private readonly DateRange _dateRange;
 
-        public TimeRecordGetListInputData(string accountId, DateTime from, DateTime to)
+        public TimeRecordGetListInputData(string accountId, DateTime? from, DateTime? to)
         {
             _accountId = AccountId.From(accountId);
-            _from = from;
-            _to = to;
+            _dateRange = new DateRange(from, to);
         }
 
         internal AccountId AccountId => _accountId;
-        internal DateTime From => _from;
-        internal DateTime To => _to;
+        internal DateRange DateRange => _dateRange;
     }
 }

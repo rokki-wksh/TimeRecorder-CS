@@ -1,7 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using TimeRecorder_CS.Domain.Models.Accounts;
 using TimeRecorder_CS.Domain.Models.TimeRecords;
+using TimeRecorder_CS.Domain.Types.DateRanges;
 using TimeRecorder_CS.Persister.InMemory.Repositories.TimeRecords;
 using TimeRecorder_CS.UseCase.TimeRecords.GetList;
 
@@ -17,12 +17,11 @@ namespace TimeRecorder_CS.Persister.InMemory.QueryServices.TimeRecordGetList
             _repository = repository;
         }
 
-        public TimeCard Query(AccountId accountId, DateTime from, DateTime to)
+        public TimeCard Query(AccountId accountId, DateRange dateRange)
         {
             var list = _repository.List()
                 .Where(x => x.AccountId == accountId.ToString())
-                .Where(x => x.RecordedDateTime >= from)
-                .Where(x => x.RecordedDateTime <= to)
+                .Where(x => dateRange.Contains(x.RecordedDateTime))
                 .Select(dto =>
                 {
                     return TimeRecord.From(

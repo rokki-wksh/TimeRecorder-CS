@@ -30,7 +30,7 @@ namespace TimeRecorder_CS.Domain.Models.TimeRecords
             return items.FirstOrDefault(item => item._id == value);
         }
 
-        internal byte Id => _id;
-        internal string Name => _name;
+        public byte Id => _id;
+        public string Name => _name;
     }
 }

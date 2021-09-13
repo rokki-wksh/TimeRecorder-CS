@@ -1,8 +1,8 @@
-﻿using System;
-using TimeRecorder_CS.Domain.Models.Accounts;
+﻿using TimeRecorder_CS.Domain.Models.Accounts;
 using TimeRecorder_CS.Domain.Models.TimeRecords;
+using TimeRecorder_CS.Domain.Types.TimeRecorders;
 
-namespace TimeRecorder_CS.Domain.Services
+namespace TimeRecorder_CS.Domain.Services.TimeRecorders
 {
     public sealed class TimeRecorder
     {
@@ -18,14 +18,20 @@ namespace TimeRecorder_CS.Domain.Services
             var stamped = TimeRecord.Create(accountId: accountId, timeRecordType: TimeRecordType.出勤);
 
             var latest = _repository.FindLatest(accountId);
-            if (latest != null && !latest.Is(TimeRecordType.退勤))
+
+            if (latest == null)
             {
-                throw new Exception($"{TimeRecordType.出勤.Name}を打刻できません。");
+                return stamped;
+            }
+
+            if (!latest.Is(TimeRecordType.退勤))
+            {
+                throw new TimeRecordCannotStampStartingException();
             }
 
             if (stamped.Before(latest))
             {
-                throw new Exception($"{TimeRecordType.出勤.Name}を打刻できません。");
+                throw new TimeRecordCannotStampStartingException();
             }
 
             return stamped;
@@ -38,12 +44,12 @@ namespace TimeRecorder_CS.Domain.Services
             var latest = _repository.FindLatest(accountId);
             if (latest == null || latest.Is(TimeRecordType.退勤))
             {
-                throw new Exception($"{TimeRecordType.退勤.Name}を打刻できません。");
+                throw new TimeRecordCannotStampStoppingException();
             }
 
             if (stamped.Before(latest))
             {
-                throw new Exception($"{TimeRecordType.退勤.Name}を打刻できません。");
+                throw new TimeRecordCannotStampStoppingException();
             }
 
             return stamped;
