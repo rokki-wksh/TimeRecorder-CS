@@ -17,8 +17,7 @@
         {
             var timeCard = _queryService.Query(
                 accountId: input.AccountId,
-                from: input.From,
-                to: input.To);
+                dateRange: input.DateRange);
 
             var output = new TimeRecordGetListOutputData(timeCard);
 
